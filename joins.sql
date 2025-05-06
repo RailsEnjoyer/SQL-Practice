@@ -18,11 +18,71 @@
 --   (11, 1, 50.00),
 --   (12, 2, 200.00);
 
-SELECT 
-  c.Name,
-  o.OrderID,
-  o.Amount
-FROM Customers AS c 
-LEFT JOIN Orders AS o  
-  ON c.CustomerID = o.CustomerID;
+-- CREATE TABLE Shop (
+--   CustomerID INT PRIMARY KEY,
+--   CustomerName NVARCHAR(50),
+--   City NVARCHAR(50)
+-- );
+
+-- CREATE TABLE Orders (
+--   OrderID INT PRIMARY KEY,
+--   CustomerID INT,
+--   OrderDate DATE
+-- );
+
+-- CREATE TABLE OrderItems (
+--   OrderItemID INT PRIMARY KEY,
+--   OrderID INT,
+--   ProductID INT,
+--   Quantity INT,
+--   UnitPrice DECIMAL(18, 2)
+-- );
+
+-- CREATE TABLE Products (
+--   CategoryID INT PRIMARY KEY,
+--   CategoryName NVARCHAR(50)
+-- );
+
+-- -- Shop: Покупатели
+-- INSERT INTO Shop (CustomerID, CustomerName, City)
+-- VALUES
+-- (1, 'Артем Ковалев', 'Минск'),
+-- (2, 'Юлия Романова', 'Гродно'),
+-- (3, 'Сергей Лисовец', 'Брест'),
+-- (4, 'Анна Орлова', 'Гомель'),
+-- (5, 'Михаил Козлов', 'Могилев');
+
+-- -- Products: Категории
+-- INSERT INTO Products (CategoryID, CategoryName)
+-- VALUES
+-- (1, 'Электроника'),
+-- (2, 'Канцтовары'),
+-- (3, 'Бытовая химия'),
+-- (4, 'Продукты'),
+-- (5, 'Одежда');
+
+-- -- Orders: Заказы
+-- INSERT INTO Orders (OrderID, CustomerID, OrderDate)
+-- VALUES
+-- (1, 1, '2025-05-01'),
+-- (2, 2, '2025-05-02'),
+-- (3, 3, '2025-05-03'),
+-- (4, 1, '2025-05-04'),
+-- (5, 4, '2025-05-05'),
+-- (6, 5, '2025-05-06'),
+-- (7, 2, '2025-05-07'),
+-- (8, 5, '2025-05-08');
+
+-- -- OrderItems: Позиции в заказах
+-- INSERT INTO OrderItems (OrderItemID, OrderID, ProductID, Quantity, UnitPrice)
+-- VALUES
+-- (1, 1, 1, 2, 299.99),
+-- (2, 1, 3, 1, 75.50),
+-- (3, 2, 2, 3, 12.20),
+-- (4, 3, 5, 2, 49.90),
+-- (5, 4, 4, 5, 5.50),
+-- (6, 5, 2, 1, 14.30),
+-- (7, 6, 1, 1, 399.00),
+-- (8, 7, 4, 10, 2.99),
+-- (9, 8, 3, 2, 60.00);
 
