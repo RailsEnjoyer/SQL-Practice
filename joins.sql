@@ -43,25 +43,30 @@
 --   CategoryName NVARCHAR(50)
 -- );
 
--- -- Shop: Покупатели
+-- DELETE FROM OrderItems;
+-- DELETE FROM Orders;
+-- DELETE FROM Products;
+-- DELETE FROM Shop;
+
+-- Shop: Customers
 -- INSERT INTO Shop (CustomerID, CustomerName, City)
 -- VALUES
--- (1, 'Артем Ковалев', 'Минск'),
--- (2, 'Юлия Романова', 'Гродно'),
--- (3, 'Сергей Лисовец', 'Брест'),
--- (4, 'Анна Орлова', 'Гомель'),
--- (5, 'Михаил Козлов', 'Могилев');
+-- (1, 'Artem Kovalev', 'Minsk'),
+-- (2, 'Yulia Romanova', 'Grodno'),
+-- (3, 'Sergey Lisovets', 'Brest'),
+-- (4, 'Anna Orlova', 'Gomel'),
+-- (5, 'Mikhail Kozlov', 'Mogilev');
 
--- -- Products: Категории
+-- -- Products: Categories
 -- INSERT INTO Products (CategoryID, CategoryName)
 -- VALUES
--- (1, 'Электроника'),
--- (2, 'Канцтовары'),
--- (3, 'Бытовая химия'),
--- (4, 'Продукты'),
--- (5, 'Одежда');
+-- (1, 'Electronics'),
+-- (2, 'Stationery'),
+-- (3, 'Household Chemicals'),
+-- (4, 'Groceries'),
+-- (5, 'Clothing');
 
--- -- Orders: Заказы
+-- -- Orders
 -- INSERT INTO Orders (OrderID, CustomerID, OrderDate)
 -- VALUES
 -- (1, 1, '2025-05-01'),
@@ -73,7 +78,7 @@
 -- (7, 2, '2025-05-07'),
 -- (8, 5, '2025-05-08');
 
--- -- OrderItems: Позиции в заказах
+-- -- OrderItems
 -- INSERT INTO OrderItems (OrderItemID, OrderID, ProductID, Quantity, UnitPrice)
 -- VALUES
 -- (1, 1, 1, 2, 299.99),
@@ -85,4 +90,3 @@
 -- (7, 6, 1, 1, 399.00),
 -- (8, 7, 4, 10, 2.99),
 -- (9, 8, 3, 2, 60.00);
-
