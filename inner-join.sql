@@ -35,3 +35,50 @@
 -- INNER JOIN OrderItems oi ON o.OrderID = oi.OrderID
 -- INNER JOIN Products p ON oi.ProductID = p.CategoryID
 -- GROUP BY o.OrderID, s.CustomerName;
+
+-- SELECT s.CustomerName, SUM(oi.Quantity * oi.UnitPrice) AS TotalSpent
+-- FROM Shop s 
+-- INNER JOIN Orders o ON o.CustomerID = s.CustomerID
+-- INNER JOIN OrderItems oi ON oi.OrderID = o.OrderID
+-- GROUP BY s.CustomerName;
+
+-- SELECT s.CustomerName, (COUNT(o.CustomerID)) AS TotalOrders
+-- FROM (
+--     Orders o
+--     INNER JOIN Shop s ON o.CustomerID = s.CustomerID
+--     GROUP BY s.CustomerName
+-- ) AS Orders
+-- ORDER BY TotalOrders DESC;
+
+-- SELECT CustomerName, OrderCount
+-- FROM (
+--     SELECT s.CustomerName, COUNT(o.OrderID) AS OrderCount
+--     FROM Orders o
+--     INNER JOIN Shop s ON o.CustomerID = s.CustomerID
+--     GROUP BY s.CustomerName
+-- ) AS OrderStats
+-- WHERE OrderCount = (
+--     SELECT MAX(OrderCount)
+--     FROM (
+--         SELECT COUNT(o.OrderID) AS OrderCount
+--         FROM Orders o
+--         GROUP BY o.CustomerID
+--     ) AS Counts
+-- );
+
+-- SELECT CategoryName, TotalSum
+-- FROM Products
+-- INNER JOIN 
+    
+
+
+SELECT ProductID, CategoryName, TotalSum
+FROM (
+    SELECT oi.ProductID, p.CategoryName, SUM(oi.Quantity * oi.UnitPrice) AS TotalSum
+    FROM OrderItems oi 
+    INNER JOIN Orders o ON o.OrderID = oi.OrderID
+    INNER JOIN Products p ON p.CategoryID = oi.ProductID
+    GROUP BY oi.ProductID, p.CategoryName
+) AS Calcs
+ORDER BY TotalSum DESC;
+
