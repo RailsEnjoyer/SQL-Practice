@@ -1,0 +1,17 @@
+<h1>Список товаров и покупателей</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Товар</th>
+      <th>Покупатель</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |p| %>
+      <tr>
+        <td><%= p.name %></td>
+        <td><%= p.buyer_name || '— никто' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
